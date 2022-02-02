@@ -74,6 +74,7 @@ body {
     display: block;
 }
 
+
 footer {
     color: #6e6969dc;
     font-size: 15px;
@@ -113,4 +114,24 @@ footer {
 .footer_text {
     display: inline-block;
     width: max-content;
+}
+
+#t_notice {
+	width: 200px;
+	position: absolute;
+	left: 20%;
+	font-size: 35px;
+}
+
+#t_link {
+	width: 200px;
+	position: absolute;
+	right: 18%;
+	font-size: 22px;
+	font-weight: bolder;
+}
+
+#t_link a {
+	text-decoration: none;
+	margin: 10px;
 }

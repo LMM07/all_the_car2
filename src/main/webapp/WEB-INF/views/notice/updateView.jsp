@@ -9,6 +9,7 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<%@include file="header.jsp" %>
 		<link href="${contextPath}/resources/css/Header_Footer.css" rel="stylesheet">
+		<link href="${contextPath}/resources/css/updateView.css" rel="stylesheet">
 		<style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 		</style>
@@ -50,53 +51,48 @@
 	<body>
 	
 		<div id="root">
-			
-			<div>
-				<%@include file="nav.jsp" %>
-			</div>
-			<hr />
-			
-			<header>
-				<h1>공지사항</h1>
-			</header>
-			<hr />
-			 
-			
+		
 			<section id="container">
 				<form name="updateForm" role="form" method="post" action="/notice/update">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
-					<table>
+					<div id="t_update_loc">
+						<table>
 						<tbody>
 							<tr>
-								<td>
-									<label for="title">제목</label><input type="text" id="title" name="title" value="${update.title}" class="chk" title="제목을 입력하세요."/>
-								</td>
-							</tr>	
-							<tr>
-								<td>
-									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
+								<td class="t_title">
+									<label for="title">제목</label>
+									<input type="text" id="title" name="title" value="${update.title}" class="chk" title="제목을 입력하세요."/>
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<label for="id">작성자</label><input type="text" id="id" name="id" value="${update.id}" readonly="readonly"/>
+								<td class="t_content">
+									<label for="content">내용</label>
+									<textarea id="content" name="content" class="chk" title="내용을 입력하세요.">
+									<c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="t_id">
+									<label for="id">작성자</label>
+									<input type="text" id="id" name="id" value="${update.id}" readonly="readonly"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="t_date">
 									<label for="regdate">작성날짜</label>
 									<fmt:formatDate value="${update.regdate}" pattern="yyyy-MM-dd"/>					
 								</td>
 							</tr>		
 						</tbody>			
 					</table>
-					<div>
+					<br><br>
+					<div id="t_update_btn">
 						<button type="submit" class="update_btn">저장</button>
 						<button type="submit" class="cancel_btn">취소</button>
 					</div>
+					</div>
 				</form>
 			</section>
-			<hr />
 		</div>
 		<br>
 		<div>

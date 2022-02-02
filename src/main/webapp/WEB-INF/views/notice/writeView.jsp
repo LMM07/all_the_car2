@@ -9,6 +9,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<%@include file="header.jsp" %>
 	<link href="${contextPath}/resources/css/Header_Footer.css" rel="stylesheet">
+	<link href="${contextPath}/resources/css/writeView.css" rel="stylesheet">
 	<style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 	</style>
@@ -17,6 +18,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var formObj = $("form[name='writeForm']");
+			
 			$(".write_btn").on("click", function(){
 				if(fn_valiChk()){
 					return false;
@@ -40,45 +42,37 @@
 <body>
 	<div id="root">
 		
-		<div>
-			<%@include file="nav.jsp" %>
-		</div>
-		<hr />
-		
-		<header>
-			<h1>공지사항</h1>
-		</header>
-		<hr />
-		
-		
 		<section id="container">
 			<form name="writeForm" method="post" action="/notice/write">
-				<table>
+				<div id="t_update_loc">
+					<table>
 					<tbody>
 						<tr>
-							<td>
-								<label for="title">제목</label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
+							<td class="t_num">
+								<label for="title">제목</label>
+								<input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."></textarea>
+							<td class="t_content">
+								<label for="content">내용</label>
+								<textarea id="content" name="content" class="chk" title="내용을 입력하세요."></textarea>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<label for="id">작성자</label><input type="text" id="id" name="id" class="chk" title="아이디를 입력하세요."/>
+							<td class="t_id">
+								<label for="id">작성자</label>
+								<input type="text" id="id" name="id" class="chk" title="아이디를 입력하세요."/>
 							</td>
-						<tr>
-							<td>
-								<button type="submit" class=write_btn>작성</button>
-							</td>	
-						</tr>	
 					</tbody>
 				</table>
+				<br><br>
+				<div id="t_write_btn">
+					<button type="submit" class=write_btn>작성</button>
+				</div>
+				</div>
 			</form>
 		</section>
-		<hr />
 	</div>
 	<br>
 	<div>

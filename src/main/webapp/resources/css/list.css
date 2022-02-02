@@ -1,0 +1,78 @@
+#t_notice {
+	width: 200px;
+	position: absolute;
+	left: 20%;
+	font-size: 35px;
+}
+
+#t_link {
+	width: 200px;
+	position: absolute;
+	right: 20%;
+	font-size: 22px;
+	font-weight: bolder;
+}
+
+#t_link a {
+	text-decoration: none;
+	margin: 10px;
+}
+
+#t_board {
+    border-collapse: collapse;
+    border: solid gray 2px;
+    width: 1200px;
+    margin: auto;
+}
+
+.t_nav {
+    background: #dc232d;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+}
+
+.t_num, .t_title, .t_id, .t_date {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    height: 40px;
+}
+
+.t_title a {
+    text-decoration: none;
+}
+
+.box1, .box2, .box3 {
+	height: 40px;
+	font-size: 25px;
+	margin-top: 25px;
+	text-align: center;
+}
+
+#t_loc {
+	width: 600px;
+	margin: auto;
+}
+
+.t_page {
+	width: 400px;
+	margin: auto;
+	margin-top: 25px;
+}
+
+.t_page li {
+	font-size: 20px;
+	font-style: bold;
+}
+
+.box3 {
+	width: 120px;
+    height: 42px;
+    font-size: 22px;
+    background: #dc232d;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
