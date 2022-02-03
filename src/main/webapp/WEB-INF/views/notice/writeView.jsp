@@ -10,6 +10,10 @@
 	<%@include file="header.jsp" %>
 	<link href="${contextPath}/resources/css/Header_Footer.css" rel="stylesheet">
 	<link href="${contextPath}/resources/css/writeView.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700&display=swap"
+        rel="stylesheet">
 	<style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 	</style>
@@ -23,7 +27,7 @@
 				if(fn_valiChk()){
 					return false;
 				}
-				formObj.attr("action", "/notice/write");
+				formObj.attr("action", "${contextPath}/notice/write");
 				formObj.attr("method", "post");
 				formObj.submit();
 			});
@@ -43,7 +47,7 @@
 	<div id="root">
 		
 		<section id="container">
-			<form name="writeForm" method="post" action="/notice/write">
+			<form name="writeForm" method="post" action="${contextPath}/notice/write">
 				<div id="t_update_loc">
 					<table>
 					<tbody>

@@ -8,6 +8,10 @@
 		<%@include file="header.jsp" %>
 		<link href="${contextPath}/resources/css/Header_Footer.css" rel="stylesheet">
 		<link href="${contextPath}/resources/css/list.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+   		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   		 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700&display=swap"
+        rel="stylesheet">
 		<style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 		</style>
@@ -24,11 +28,12 @@
 							<tr>
 								<td class="t_num"><c:out value="${list.bno}" /></td>
 								<td class="t_title">
-									<a href="/notice/readView?bno=${list.bno}&
+									<a href="${contextPath}/notice/readView?bno=${list.bno}&
 															page=${scri.page}&
 															perPageNum=${scri.perPageNum}&
 															searchType=${scri.searchType}&
-															keyword=${scri.keyword}"><c:out value="${list.title}" /></a>
+															keyword=${scri.keyword}">
+															<c:out value="${list.title}" /></a>
 								</td>
 								<td class="t_id"><c:out value="${list.id}" /></td>
 								<td class="t_date"><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
@@ -62,15 +67,15 @@
 						<div>
 						  <ul class="t_page">
 						    <c:if test="${pageMaker.prev}">
-						    	<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+						    	<li><a href="${contextPath}list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
 						    </c:if> 
 						
 						    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-						    	<li><a href="list${pageMaker.makeSearch(idx)}">${idx}</a></li>
+						    	<li><a href="${contextPath}list${pageMaker.makeSearch(idx)}">${idx}</a></li>
 						    </c:forEach>
 						
 						    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-						    	<li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+						    	<li><a href="${contextPath}list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
 						    </c:if> 
 						  </ul>
 						</div>

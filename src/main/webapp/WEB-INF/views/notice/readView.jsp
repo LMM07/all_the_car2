@@ -8,6 +8,10 @@
 		<%@include file="header.jsp" %>
 		<link href="${contextPath}/resources/css/Header_Footer.css" rel="stylesheet">
 		<link href="${contextPath}/resources/css/readView.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700&display=swap"
+        rel="stylesheet">
 		<style type="text/css">
 			li {list-style: none; float: left; padding: 6px;}
 		</style>
@@ -19,7 +23,7 @@
 			
 			// 수정 
 			$(".update_btn").on("click", function(){
-				formObj.attr("action", "/notice/updateView");
+				formObj.attr("action", "${contextPath}/notice/updateView");
 				formObj.attr("method", "get");
 				formObj.submit();				
 			})
@@ -30,7 +34,7 @@
 				
 				if(deleteYN == true){
 				
-				formObj.attr("action", "/notice/delete");
+				formObj.attr("action", "${contextPath}/notice/delete");
 				formObj.attr("method", "post");
 				formObj.submit();
 				}
@@ -39,7 +43,7 @@
 			//목록
 			$(".list_btn").on("click", function(){
 
-				location.href = "/notice/list?page=${scri.page}"
+				location.href = "${contextPath}/notice/list?page=${scri.page}"
 							+"&perPageNum=${scri.perPageNum}"
 							+"&searchType=${scri.searchType}&keyword=${scri.keyword}";
 				})
